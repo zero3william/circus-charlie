@@ -1,5 +1,5 @@
 import * as React from "react";
-import { browserHistory } from "react-router";
+import { hashHistory } from "react-router";
 import * as PIXI from "pixi.js";
 import PIXI_SOUND from "pixi-sound";
 window.PIXI = PIXI;
@@ -8,7 +8,6 @@ import { gsap } from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import {
   getSize,
-  getScale,
   logo,
   startTextStyle,
   labelStyle,
@@ -64,7 +63,7 @@ class Game extends React.Component {
       PixiPlugin.registerPIXI(PIXI);
       this.initGame();
     } else {
-      browserHistory.push("/");
+      hashHistory.push("/");
     }
   }
 
@@ -73,9 +72,9 @@ class Game extends React.Component {
     const timeline = gsap.timeline();
 
     // audio
-    this.audio_01 = PIXI_SOUND.sound.Sound.from(audio_stage1);
-    this.audio_rip = PIXI_SOUND.sound.Sound.from(audio_rip);
-    this.audio_win = PIXI_SOUND.sound.Sound.from(audio_win);
+    this.audio_01 = this.getSound(audio_stage1);
+    this.audio_rip = this.getSound(audio_rip);
+    this.audio_win = this.getSound(audio_win);
 
     // add title
     const titleX = width / 2;
@@ -645,6 +644,11 @@ class Game extends React.Component {
     for (let key in options) {
       temp[key].set(options[key]);
     }
+    return temp;
+  }
+
+  getSound(url) {
+    let temp = new PIXI_SOUND.sound.Sound.from(this.app.loader.resources[url]);
     return temp;
   }
 

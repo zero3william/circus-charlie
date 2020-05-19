@@ -1,5 +1,5 @@
 import * as React from "react";
-import { browserHistory } from "react-router";
+import { hashHistory } from "react-router";
 import * as PIXI from "pixi.js";
 window.PIXI = PIXI;
 require("pixi-layers");
@@ -16,6 +16,9 @@ import {
   stage2_bg,
   stars,
   loadingTextStyle,
+  audio_stage1,
+  audio_rip,
+  audio_win,
 } from "../config.js";
 
 let { width, height } = getSize();
@@ -60,7 +63,17 @@ class Loading extends React.Component {
     );
 
     this.app.loader
-      .add([bar, bar_bg, logo, stage1_bg, stage2_bg, stars])
+      .add([
+        bar,
+        bar_bg,
+        logo,
+        stage1_bg,
+        stage2_bg,
+        stars,
+        audio_stage1,
+        audio_win,
+        audio_rip,
+      ])
       .on("progress", (loader) => {
         this.progressText.text = parseInt(loader.progress * 100) / 100 + "%";
       })
@@ -73,7 +86,7 @@ class Loading extends React.Component {
     this.props.data.appChange(this.app);
     this.loadingText.destroy(true);
     this.progressText.destroy(true);
-    browserHistory.push("game");
+    hashHistory.push("game");
   }
 
   getLoadingTextPos() {

@@ -12,7 +12,7 @@ import audio_rip from "./assets/audio/rip.mp3";
 import audio_win from "./assets/audio/applause.mp3";
 
 const canvasWidth = 680;
-const ratio = window.devicePixelRatio || 1;
+const ratio = 2;
 
 function getSize() {
   const width = canvasWidth / ratio;
@@ -29,7 +29,7 @@ function getScale() {
 const canvas = {
   ...getSize(),
   backgroundColor: 0x000000,
-  resolution: ratio,
+  resolution: ratio
 };
 
 const loadingTextStyle = new PIXI.TextStyle({
@@ -37,21 +37,21 @@ const loadingTextStyle = new PIXI.TextStyle({
   fontStyle: "italic",
   fill: ["#ffffff", "#00ff99"], // gradient
   stroke: "#4a1850",
-  strokeThickness: 1,
+  strokeThickness: 1
 });
 
 const startTextStyle = new PIXI.TextStyle({
   fontSize: 13,
   fill: "#ffffff", // gradient
   stroke: "#4a1850",
-  strokeThickness: 1,
+  strokeThickness: 1
 });
 
 const labelStyle = new PIXI.TextStyle({
   fontSize: 8,
   fill: "#ffffff", // gradient
   stroke: "#4a1850",
-  strokeThickness: 1,
+  strokeThickness: 1
 });
 
 const keyCode = {
@@ -63,7 +63,7 @@ const keyCode = {
   w: 87,
   a: 65,
   d: 68,
-  m: 77,
+  m: 77
 };
 
 const sheet = new PIXI.BaseTexture(spriteSheet);
@@ -71,57 +71,57 @@ const sheet = new PIXI.BaseTexture(spriteSheet);
 const clown_move = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(159, 5, 24, 24)),
   new PIXI.Texture(sheet, new PIXI.Rectangle(180, 5, 24, 24)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(200, 5, 24, 24)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(200, 5, 24, 24))
 ];
 
 const clown_die = [
-  new PIXI.Texture(sheet, new PIXI.Rectangle(162, 31, 21, 25)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(162, 31, 21, 25))
 ];
 
 const clown_win = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(201, 57, 18, 26)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(219, 57, 18, 26)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(219, 57, 18, 26))
 ];
 
 const clown_on_lion_walk = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(180, 58, 19, 24)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(162, 58, 19, 24)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(162, 58, 19, 24))
 ];
 const clown_on_lion_idle = [
-  new PIXI.Texture(sheet, new PIXI.Rectangle(162, 58, 19, 24)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(162, 58, 19, 24))
 ];
 const clown_on_lion_jump = [
-  new PIXI.Texture(sheet, new PIXI.Rectangle(180, 58, 19, 24)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(180, 58, 19, 24))
 ];
 
 const lion_jump = [
-  new PIXI.Texture(sheet, new PIXI.Rectangle(164, 86, 34, 18)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(164, 86, 34, 18))
 ];
 const lion_walk = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(197, 86, 34, 18)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(164, 86, 34, 18)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(164, 86, 34, 18))
 ];
 const lion_idle = [
-  new PIXI.Texture(sheet, new PIXI.Rectangle(232, 86, 34, 18)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(232, 86, 34, 18))
 ];
 const lion_die = [new PIXI.Texture(sheet, new PIXI.Rectangle(270, 86, 34, 18))];
 
 const fireHoopLL = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(137, 144, 12, 82)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(165, 144, 12, 82)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(165, 144, 12, 82))
 ];
 const fireHoopLR = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(149, 144, 12, 82)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(177, 144, 12, 82)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(177, 144, 12, 82))
 ];
 
 const firePit = [
   new PIXI.Texture(sheet, new PIXI.Rectangle(194, 193, 25, 42)),
-  new PIXI.Texture(sheet, new PIXI.Rectangle(220, 193, 25, 42)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(220, 193, 25, 42))
 ];
 
 const destination = [
-  new PIXI.Texture(sheet, new PIXI.Rectangle(89, 234, 40, 32)),
+  new PIXI.Texture(sheet, new PIXI.Rectangle(89, 234, 40, 32))
 ];
 
 export {
@@ -154,5 +154,5 @@ export {
   firePit,
   audio_stage1,
   audio_rip,
-  audio_win,
+  audio_win
 };

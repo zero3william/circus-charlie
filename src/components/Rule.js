@@ -7,12 +7,12 @@ import {
   lion_walk,
   lion_idle,
   lion_jump,
-  keyCode,
+  keyCode
 } from "../config.js";
 
 import Keyboard from "../utils/keyboard";
 
-const ratio = window.devicePixelRatio || 1;
+const ratio = 1.9;
 const width = 300 / ratio;
 const height = 200 / ratio;
 
@@ -22,10 +22,10 @@ class Rule extends React.Component {
     status: "idle",
     jump_direction: 1,
     sprite: null,
-    speed: 1.5,
+    speed: 1.5
   };
   clown = {
-    sprite: null,
+    sprite: null
   };
 
   constructor(props) {
@@ -77,7 +77,7 @@ class Rule extends React.Component {
       width,
       height,
       backgroundColor: 0x000000,
-      resolution: ratio,
+      resolution: ratio
     });
     document.getElementById("demo-player").appendChild(this.app.view);
 
@@ -85,7 +85,7 @@ class Rule extends React.Component {
     this.app.stage.addChild(this.player);
     this.player.position.set(width / 2, height - this.player.height);
 
-    this.app.ticker.add((delta) => {
+    this.app.ticker.add(delta => {
       if (this.lion.status === "walk") {
         this.playerSpeed(delta);
       } else if (this.lion.status === "jump") {

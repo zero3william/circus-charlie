@@ -215,7 +215,7 @@ class Game extends React.Component {
     this.app.ticker.add(this.stage1Ticker, this);
   }
 
-  stage1Ticker(delta) {
+  async stage1Ticker(delta) {
     const hoopFrequency = 360;
     this.hoopCountdown += delta;
     if (this.hoopCountdown > hoopFrequency) {
@@ -264,9 +264,10 @@ class Game extends React.Component {
           duration: 0.4,
         });
       this.audio_01.stop();
-      this.audio_rip.play(() => {
-        this.restartStage01();
-      });
+      this.audio_rip.play();
+
+      await this.sleep(4000);
+      this.restartStage01();
     }
   }
 
@@ -648,7 +649,7 @@ class Game extends React.Component {
   }
 
   getSound(url) {
-    let temp = new PIXI_SOUND.sound.Sound.from(this.app.loader.resources[url]);
+    let temp = new PIXI_SOUND.sound.Sound.from(url);
     return temp;
   }
 

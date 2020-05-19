@@ -1,0 +1,76 @@
+.rule-container {
+  color: #fff;
+  padding: 3vw;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  .info {
+    font-size: 18px;
+    margin-bottom: 2rem;
+  }
+}
+
+$key-button-width: 50px;
+.key-container {
+  margin: 2rem 0;
+  .explanation {
+    margin-left: 10px;
+    font-size: 24px;
+  }
+  .button {
+    box-sizing: border-box;
+    line-height: $key-button-width;
+    font-size: 22px;
+    text-align: center;
+    width: $key-button-width;
+    color: #555;
+    cursor: pointer;
+    margin: 0 8px;
+    height: $key-button-width;
+    border-color: #f2f2f2;
+    border-style: solid;
+    text-shadow: 0 0.5px 1px #777, 0 2px 6px #f2f2f2;
+    border-width: 1px;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(
+      top,
+      #f9f9f9 0%,
+      #d2d2d2 80%,
+      #c0c0c0 100%
+    );
+    font-family: sans-serif;
+    display: inline-block;
+    transition: box-shadow 0.3s ease, transform 0.15s ease;
+    box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 5px 0 #c0c0c0,
+      0 8px 17px rgba(#444, 0.4), 2px 1px 4px rgba(#444, 0.25),
+      -2px 1px 4px rgba(#444, 0.25), 0 9px 16px rgba(#444, 0.1);
+    &.press {
+      box-shadow: 0 0 1px #888, 0 1px 0 #fff, 0 0 0 #c0c0c0,
+        0 0px 30px rgba(#444, 0.15), 2px 2px 4px rgba(#444, 0.25),
+        -2px 2px 4px rgba(#444, 0.25), 0 0px 4px rgba(#444, 0.25);
+      transform: translateY(4px);
+    }
+  }
+  .space {
+    width: $key-button-width * 3;
+  }
+}
+
+.key-emulator {
+  position: fixed;
+  bottom: -20%;
+  left: 20%;
+  transform: scale(1.4);
+  #emuW {
+    opacity: 0;
+  }
+  #emuEnter {
+    opacity: 1;
+  }
+  #emuSpace {
+    opacity: 1;
+  }
+  #emuD {
+    opacity: 0;
+  }
+}

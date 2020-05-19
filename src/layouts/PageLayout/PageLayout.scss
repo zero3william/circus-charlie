@@ -1,0 +1,25 @@
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+body {
+  font-family: "arcadeclasic";
+  margin: 0px 0px 1px 0px;
+  color: #fff;
+  background-color: #111;
+}
+
+canvas {
+  display: block;
+}
+
+#pixi-container {
+}

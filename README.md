@@ -1,3 +1,3 @@
-[![Live Demo](http://www.bgpapa.party/circus/)
+[Live Demo](http://www.bgpapa.party/circus/)
 
 React + pixi , practice

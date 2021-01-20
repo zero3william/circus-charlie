@@ -19,7 +19,7 @@
     "bootstrap": "^4.0.0-alpha",
     "compression": "^1.6.2",
     "express": "^4.14.0",
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "object-assign": "^4.1.1",
     "pixi-layers": "^0.2.3",
     "pixi-sound": "^3.0.4",
